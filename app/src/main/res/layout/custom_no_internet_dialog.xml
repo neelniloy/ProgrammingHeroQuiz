@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/noInternetIv"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            app:lottie_rawRes="@raw/no_internet"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true" />
+
+        <TextView
+            android:id="@+id/alert_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="You are not connected to the internet or internet access is not available."
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textColor="@android:color/black" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/exitBtn"
+            android:layout_marginTop="35dp"
+            style="@style/ShapeAppearanceOverlay.Material3.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Exit App"
+            app:cornerRadius="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:elevation="16dp" />
+    </LinearLayout>
+</layout>
