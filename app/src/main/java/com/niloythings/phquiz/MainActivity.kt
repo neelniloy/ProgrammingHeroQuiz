@@ -2,11 +2,13 @@ package com.niloythings.phquiz
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.content.IntentFilter
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -111,9 +113,9 @@ class MainActivity : AppCompatActivity(), NetworkCallback {
             alertDialog = dialogBuilder.create()
 
             // Define the action when the exit button is clicked
-            dialogBinding.exitBtn.setOnClickListener {
+            dialogBinding.openBtn.setOnClickListener {
                 alertDialog?.dismiss()
-                finishAffinity()
+                startActivity(Intent(Settings.ACTION_WIRELESS_SETTINGS))
             }
 
             alertDialog?.show()

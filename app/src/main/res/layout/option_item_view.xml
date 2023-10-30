@@ -11,7 +11,7 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardView"
-        android:layout_width="150dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="6dp"
         app:contentPadding="14dp"
@@ -19,7 +19,7 @@
         android:focusable="true"
         app:cardElevation="4dp"
         app:cardCornerRadius="15dp"
-        app:cardBackgroundColor="@color/material_blue"
+        app:cardBackgroundColor="@color/white"
         android:foreground="?selectableItemBackground">
 
         <LinearLayout
@@ -30,98 +30,12 @@
 
             <TextView
                 android:textSize="18sp"
-                android:textColor="@color/white"
+                android:textColor="@color/button_text_color"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/row_dateTV"
-                app:setDay="@{item.dt}"
-                tools:text="Tuesday"/>
+                android:text="Kotlin"/>
 
-            <TextView
-                android:layout_marginTop="2dp"
-                android:textColor="@color/white"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/row_date_timeTV"
-                app:setDayTime="@{item.dt}"
-                tools:text="12:00 PM"/>
-
-
-            <ImageView
-                android:layout_marginTop="5dp"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:id="@+id/row_image"
-                app:setIcon="@{item.weather[0].icon}"
-                android:src="@mipmap/ic_launcher"/>
-
-            <TextView
-                android:textSize="22sp"
-                android:textColor="@color/white"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:setTemp="@{item.main.temp}"
-                tools:text="20"/>
-
-        <RelativeLayout
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:src="@drawable/ic_arrow_down"/>
-
-                <TextView
-                    android:textSize="14sp"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:setTemp="@{item.main.tempMin}"
-                    tools:text="11"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_alignParentEnd="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:src="@drawable/ic_arrow_up"/>
-
-                <TextView
-                    android:textSize="14sp"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:setTemp="@{item.main.tempMax}"
-                    tools:text="20"/>
-
-            </LinearLayout>
-
-        </RelativeLayout>
-
-            <TextView
-                android:layout_marginTop="10dp"
-                android:textColor="@color/white"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:setCapitalize="@{item.weather[0].description}"
-                android:id="@+id/row_condition_tv"
-                tools:text="Rainy"
-                />
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>

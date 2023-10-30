@@ -32,13 +32,13 @@
             android:textColor="@android:color/black" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/exitBtn"
+            android:id="@+id/openBtn"
             android:layout_marginTop="35dp"
             style="@style/ShapeAppearanceOverlay.Material3.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:text="Exit App"
+            android:text="Open Internet Setting"
             app:cornerRadius="8dp"
             android:clickable="true"
             android:focusable="true"
