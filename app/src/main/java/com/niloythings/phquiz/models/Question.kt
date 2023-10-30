@@ -4,7 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
-:Percedata class Question(
+data class Question(
     @SerializedName("question")
     var question : String? = null,
     @SerializedName("answers")
