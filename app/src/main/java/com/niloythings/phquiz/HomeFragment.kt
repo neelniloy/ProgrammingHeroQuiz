@@ -6,12 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.niloythings.phquiz.databinding.FragmentHomeBinding
+import com.niloythings.phquiz.models.Question
+import com.niloythings.phquiz.viewmodels.QuizViewModel
 
 class HomeFragment : Fragment() {
 
     private lateinit var binding:FragmentHomeBinding
+    private val quizViewModel: QuizViewModel by activityViewModels()
+    private var questionList = mutableListOf<Question>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,8 +27,21 @@ class HomeFragment : Fragment() {
         //Hide Actionbar as it is not necessary in this fragment
         (activity as AppCompatActivity).supportActionBar!!.hide()
 
+
+        //get question list
+        quizViewModel.fetchQuestionData().observe(viewLifecycleOwner){list->
+            questionList.clear()
+            questionList.addAll(list)
+        }
         binding.btnStartQuiz.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_quizFragment)
+
+            val bundle = Bundle()
+            val questionModelList = ArrayList<Question>()
+            questionModelList.addAll(questionList)
+            // Put the list in the bundle
+            bundle.putParcelableArrayList("serverList", questionModelList)
+
+            findNavController().navigate(R.id.action_homeFragment_to_quizFragment,bundle)
         }
 
         return binding.root

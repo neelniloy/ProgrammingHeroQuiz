@@ -1,6 +1,7 @@
 package com.niloythings.phquiz.viewmodels
 
 import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -12,7 +13,7 @@ class QuizViewModel : ViewModel(){
     val repository = QuizRepository()
     val questionLiveData: MutableLiveData<QuestionList> = MutableLiveData()
 
-    fun fetchQuestionData() {
+    fun fetchQuestionData() : LiveData<QuestionList> {
         viewModelScope.launch {
             try {
                 questionLiveData.value = repository.fetchQuestionData()
@@ -20,6 +21,7 @@ class QuizViewModel : ViewModel(){
                 e.localizedMessage?.let { Log.e("LocationViewModel", it) }
             }
         }
+        return questionLiveData
     }
 }
 

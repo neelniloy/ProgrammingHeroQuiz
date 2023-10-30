@@ -12,11 +12,13 @@
         android:layout_height="match_parent"
         android:background="@color/background_color"
         android:orientation="vertical"
+        android:gravity="center"
         tools:context=".QuizFragment">
 
         <LinearLayout
             android:paddingHorizontal="25dp"
-            android:layout_marginTop="50dp"
+            android:paddingVertical="5dp"
+            android:layout_marginTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
@@ -44,6 +46,15 @@
 
         </LinearLayout>
 
+        <TextView
+            android:layout_marginTop="15dp"
+            android:id="@+id/counterTV"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7"/>
+
         <com.google.android.material.card.MaterialCardView
             android:layout_marginTop="45dp"
             android:id="@+id/cardView"
@@ -51,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="26dp"
             app:contentPadding="14dp"
-            android:clickable="true"
+            android:clickable="false"
             android:focusable="true"
             app:cardElevation="4dp"
             app:cardCornerRadius="15dp"
@@ -96,13 +107,14 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="26dp"
             android:layout_marginTop="25dp"
-            app:contentPadding="14dp"
+            app:contentPadding="7dp"
             android:clickable="true"
             android:focusable="true"
             app:cardElevation="4dp"
             app:cardCornerRadius="8dp"
             app:cardBackgroundColor="@color/white"
-            android:foreground="?selectableItemBackground">
+            android:foreground="?selectableItemBackground"
+            app:strokeWidth="3dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -116,6 +128,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/OP1"
+                    android:textStyle="bold"
                     android:text="Kotlin"/>
 
             </LinearLayout>
@@ -127,13 +140,14 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="26dp"
             android:layout_marginTop="10dp"
-            app:contentPadding="14dp"
+            app:contentPadding="7dp"
             android:clickable="true"
             android:focusable="true"
             app:cardElevation="4dp"
             app:cardCornerRadius="8dp"
             app:cardBackgroundColor="@color/white"
-            android:foreground="?selectableItemBackground">
+            android:foreground="?selectableItemBackground"
+            app:strokeWidth="3dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -147,6 +161,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/OP2"
+                    android:textStyle="bold"
                     android:text="A Logo"/>
 
             </LinearLayout>
@@ -158,13 +173,14 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="26dp"
             android:layout_marginTop="10dp"
-            app:contentPadding="14dp"
+            app:contentPadding="7dp"
             android:clickable="true"
             android:focusable="true"
             app:cardElevation="4dp"
             app:cardCornerRadius="8dp"
             app:cardBackgroundColor="@color/white"
-            android:foreground="?selectableItemBackground">
+            android:foreground="?selectableItemBackground"
+            app:strokeWidth="3dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -178,6 +194,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/OP3"
+                    android:textStyle="bold"
                     android:text="Emni"/>
 
             </LinearLayout>
@@ -189,13 +206,14 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="26dp"
             android:layout_marginTop="10dp"
-            app:contentPadding="14dp"
+            app:contentPadding="7dp"
             android:clickable="true"
             android:focusable="true"
             app:cardElevation="4dp"
             app:cardCornerRadius="8dp"
             app:cardBackgroundColor="@color/white"
-            android:foreground="?selectableItemBackground">
+            android:foreground="?selectableItemBackground"
+            app:strokeWidth="3dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -209,6 +227,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/OP4"
+                    android:textStyle="bold"
                     android:text="Keno"/>
 
             </LinearLayout>
